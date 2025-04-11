@@ -1497,4 +1497,64 @@ button:hover,
     font-size: 1rem;
     color: var(--light-text);
   }
-  
+
+/* 📱 Ajustes para pantallas pequeñas (celular) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .card-container,
+  .small-cards,
+  .bienestar-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .receta, .bienestar-card {
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  table {
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input, select, textarea, button {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .btn-cta, .descargar-btn, #shareBtn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .chart-card canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
