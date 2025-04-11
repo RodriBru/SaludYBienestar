@@ -1498,11 +1498,14 @@ button:hover,
     color: var(--light-text);
   }
 
-/* 📱 Ajustes para pantallas pequeñas (celular) */
+/* ========================== */
+/* 📱 Estilos responsivos para móviles */
+/* ========================== */
+
 @media (max-width: 768px) {
   body {
-    font-size: 16px;
     padding: 10px;
+    font-size: 16px;
   }
 
   header h1 {
@@ -1513,48 +1516,40 @@ button:hover,
   nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .card-container,
-  .small-cards,
-  .bienestar-grid {
+  .card-container {
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
   }
 
-  .card, .receta, .bienestar-card {
-    width: 90%;
-    max-width: 400px;
-    margin-bottom: 20px;
+  .card,
+  .card-nutricionista,
+  .card-trainer {
+    width: 100%;
+    margin: 0 auto;
   }
 
   table {
     font-size: 14px;
+    display: block;
     overflow-x: auto;
   }
 
-  form {
+  .receta img {
     width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
-  input, select, textarea, button {
+  .formulario-contacto input,
+  .formulario-contacto textarea {
     width: 100% !important;
     box-sizing: border-box;
-  }
-
-  .btn-cta, .descargar-btn, #shareBtn {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .chart-card canvas {
-    width: 100% !important;
-    height: auto !important;
   }
 }
 
