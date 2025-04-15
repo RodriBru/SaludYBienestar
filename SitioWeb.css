@@ -1,102 +1,49 @@
+
 /* =========================================
    Variables y Reset
 ========================================= */
 :root {
-  --primary-color: #52b69a;
-  --secondary-color: #76c893;
-  --accent-color: #ff6600;
-  --hover-accent: #ff3300;
-  --background-color: #f0f9f4;
-  --card-background: rgba(225, 204, 174, 0.7);
-  --text-color: #2c3e50;
-  --light-text: #7f8c8d;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --header-gradient: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  --transition-speed: 0.3s;
-}
+    /* Paleta de Colores */
+    --primary-color: #52b69a;
+    --secondary-color: #76c893;
+    --accent-color: #ff6600;
+    --hover-accent: #ff3300;
+    --background-color: #f0f9f4;
+    --card-background: 		rgba(225, 204, 174, 0.7); /* Verde con 50% de transparencia */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
+    --text-color: #2c3e50;
+    --light-text: #7f8c8d;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-gradient: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    --transition-speed: 0.3s;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ /* Aplicar la imagen de fondo al body */
 body {
-  background-image: url('imagenes/fondo-1.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: #333;
-  font-family: 'Arial', sans-serif;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding-top: 20px;
+    background-image: url('imagenes/fondo-1.png'); /* Cambia esta URL por la imagen que elijas */
+    background-size: cover; /* Esto hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-attachment: fixed; /* La imagen se mantiene fija cuando haces scroll */
+    background-repeat: no-repeat; /* La imagen no se repite */
+    color: #333; /* Color general del texto */
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente aquí */
+    margin: 0;
+    padding: 0;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.card-container,
-.recetasContainer,
-.cards-trainers,
-.cards-nutricionistas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card,
-.receta,
-.card-trainer,
-.card-nutricionista {
-  min-width: 280px;
-  max-width: 300px;
-  flex: 1 1 280px;
-}
-
-@media (max-width: 768px) {
-  .card-container,
-  .recetasContainer,
-  .cards-trainers,
-  .cards-nutricionistas {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scroll-snap-type: x mandatory;
+  
+  /* =========================================
+     Smooth Scroll Global
+  ========================================= */
+  html {
+    scroll-behavior: smooth;
   }
-
-  .card,
-  .receta,
-  .card-trainer,
-  .card-nutricionista {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-  }
-
-  .card-container::-webkit-scrollbar,
-  .recetasContainer::-webkit-scrollbar,
-  .cards-trainers::-webkit-scrollbar,
-  .cards-nutricionistas::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tabla-rutina {
-    margin-left: 0 !important;
-  }
-
-  #inputsGrid {
-    grid-template-columns: 1fr;
-  }
-}
   
   /* =========================================
      Sección Hero
@@ -237,64 +184,46 @@ header {
    Navegación
 ========================================= */
 nav {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--primary-color);
-  padding: 12px 0;
-  border-radius: 10px;
-  margin: 15px auto;
-  width: 90%;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-}
-
-nav::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-nav ul {
-  list-style: none;
-  display: inline-flex;
-  gap: 1rem;
-  padding: 0 1rem;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul li {
-  flex: 0 0 auto;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 10px;
-  transition: background var(--transition-speed);
-  display: inline-block;
-  white-space: nowrap;
-}
-
-nav ul li a:hover {
-  background-color: var(--hover-accent);
-}
-
-
-nav.scrolled {
-  background-color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Agregá esto al final del body si no está */
-body {
-  padding-top: 20px; /* Ajustalo si es necesario según la altura real de tu navbar */
-}
-
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin: 15px auto;
+    width: 90%;
+    transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: background var(--transition-speed);
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--hover-accent);
+  }
+  
+  nav.scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
   
   
 /* =========================================
@@ -436,7 +365,7 @@ footer {
 #nutricion p {
   font-size: 1.1rem;
   margin-bottom: 20px;
-  color: #5C4033;
+  color: #F4EADC;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* café oscuro translúcido */
 }
 
@@ -1569,58 +1498,171 @@ button:hover,
     font-size: 1rem;
     color: var(--light-text);
   }
-  
 
 
   /* =========================================
-   FORZAR MODO ESCRITORIO EN CELULAR
+   Ajustes para celular (Mobile Fix)
 ========================================= */
-html, body {
-  min-width: 1200px;
-  overflow-x: auto;
-}
-
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   body {
-    min-width: 1200px;
+    padding: 0 10px;
   }
 
-  .container,
-  .card-container,
-  .recetasContainer,
-  .cards-trainers,
-  .cards-nutricionistas {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    overflow-x: visible !important;
-  }
-
-  .card,
-  .receta,
-  .card-trainer,
-  .card-nutricionista {
-    min-width: unset !important;
-  }
-
-  nav {
-    overflow-x: visible !important;
-    white-space: normal !important;
+  .container {
+    padding: 10px;
   }
 
   nav ul {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-container {
+    gap: 10px;
   }
 
   #inputsGrid {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  #macrosChart {
+    height: 300px !important;
+  }
+
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px;
+    width: max-content;
+  }
+
+  nav ul li {
+    flex: 0 0 auto;
+  }
+
+  nav ul li a {
+    white-space: nowrap;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  #calculadora {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 20px 15px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  #calculadora form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #calculadora input,
+  #calculadora select {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  
+  .genero-container {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .genero-card {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .card-container.small-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  
+  .card.meal-type {
+    min-width: 200px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .card-container.small-cards::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .card-container.small-cards::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+
+  .rutina-table-container {
+    transform: scale(0.85);
+    transform-origin: top center;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 20px 10px;
+    max-width: 100%;
+    width: fit-content;
   }
 
   .tabla-rutina {
-    margin-left: 150px !important;
+    font-size: 0.85rem;
+    margin: 0 auto;
   }
 
-  .card-container.small-cards {
-    flex-wrap: wrap !important;
+  .tabla-rutina th,
+  .tabla-rutina td {
+    padding: 6px 10px;
   }
+
+  #tituloTablaRutina {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .btn-volver,
+  #descargarRutinaBtn {
+    display: block;
+    margin: 15px auto;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+  
+
+
 }
+
