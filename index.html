@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
   <title>Salud y Bienestar - Tu Portal de Salud Integral</title>
   <meta name="description" content="Consejos de nutrición, rutinas de ejercicio y bienestar mental para mejorar tu calidad de vida con planes personalizados.">
   <meta name="keywords" content="salud, bienestar, nutrición, ejercicio, salud mental, fitness, recetas">
@@ -244,7 +247,7 @@
       <button id="descargarGrafico">Descargar gráfico</button>
 
     </div>
-    
+
     <!-- Botón para Compartir -->
     <button id="shareBtn" style="display: none;">Compartir Resultados</button>
   </div>
@@ -411,10 +414,14 @@
       <div class="bienestar-card"><h4><i class="fas fa-running"></i> Ejercicio físico</h4><button onclick="mostrarBienestar('ejercicio')">Ver Detalles</button></div>
       <div class="bienestar-card"><h4><i class="fas fa-leaf"></i> Alimentación balanceada</h4><button onclick="mostrarBienestar('alimentacion')">Ver Detalles</button></div>
   </div>
-  <div id="resultadoBienestar" class="bienestar-info oculto" aria-live="polite"></div>
+
     </div>
   
-    <div id="resultadoBienestar" class="bienestar-info oculto" aria-live="polite"></div>
+    <div id="resultadoBienestar" class="bienestar-info oculto" aria-live="polite">
+      <button onclick="volverABienestar()" class="btn-volver">← Volver</button>
+      <div id="contenidoBienestar"></div>
+    </div>
+    
   
     <!-- Generador de Plan de Bienestar -->
     <div class="plan-bienestar">
