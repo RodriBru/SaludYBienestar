@@ -522,9 +522,30 @@ const rutinasSemanales = {
     }
   
     const resultado = document.getElementById("resultadoBienestar");
-    resultado.innerHTML = contenido;
+    resultado.innerHTML = `
+      <button onclick="volverABienestar()" class="btn-volver">← Volver</button>
+      ${contenido}
+    `;
     resultado.classList.remove("oculto");
+  
+    // Oculta solo las tarjetas de bienestar
+    document.querySelector(".bienestar-grid").style.display = "none";
   }
+  
+  
+  function volverABienestar() {
+    document.getElementById("resultadoBienestar").classList.add("oculto");
+    document.querySelector(".bienestar-grid").style.display = "grid";
+  }
+  
+
+
+
+
+
+
+
+
   
 function generarPlanBienestar() {
   const interes = document.getElementById("interes").value;
