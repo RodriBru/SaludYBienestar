@@ -237,7 +237,7 @@ header {
    Navegación
 ========================================= */
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   background-color: var(--primary-color);
