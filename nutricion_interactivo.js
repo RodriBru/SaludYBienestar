@@ -859,21 +859,27 @@ function crearTarjetaReceta(receta) {
 const nutricionistas = {
   montevideo: [
     {
-      nombre: "Lic. Juan Pérez",
-      contacto: "011111111",
-      mail: "juan.perez@email.com",
-      dias: "Lunes a Viernes",
-      imagen: "imagenes/default.png"
+      nombre: "Lic. Ejemplo",
+      contacto: "Ejemplo",
+      mail: "Ejemplo",
+      dias: "Ejemplo: Lunes a Viernes",
+      imagen: "imagenes/default.png",
+      observacion: "Ejemplo: Atiende en clínica privada en Pocitos.",
+      whatsapp: "https://wa.me/59891111111",
+      instagram: "https://instagram.com/juan.nutricion"
     },
     {
       nombre: "Dra. Ana Gómez",
       contacto: "011111111",
       mail: "ana.gomez@email.com",
       dias: "Martes y Jueves",
-      imagen: "imagenes/default.png"
+      imagen: "imagenes/default.png",
+      observacion: "Especialista en alimentación infantil.",
+      whatsapp: "https://wa.me/59892222222",
+      instagram: "https://instagram.com/dra.ana.nutri"
     }
   ]
-  // agrega más departamentos
+  // agrega más departamentos si querés
 };
 
 function mostrarNutricionistas() {
@@ -884,18 +890,27 @@ function mostrarNutricionistas() {
   lista.innerHTML = "";
   infoContainer.style.display = "block";
 
-  if (nutricionistas[departamento] && nutricionistas[departamento].length > 0) {
-    nutricionistas[departamento].forEach(n => {
+  const profesionales = nutricionistas[departamento];
+
+  if (profesionales && profesionales.length > 0) {
+    profesionales.forEach(n => {
       const card = document.createElement("div");
       card.classList.add("card-nutricionista");
 
       card.innerHTML = `
-  <img src="${n.imagen}" alt="${n.nombre}">
-  <h4>${n.nombre}</h4>
-  <p>📞 <strong>Teléfono:</strong> <a href="tel:${n.contacto}" class="info">${n.contacto}</a></p>
-      <p>📧 <strong>Correo:</strong> <a href="mailto:${n.maill}" class="info">${n.mail}</a></p>
-      <p>📅 <strong>Días disponibles:</strong> <span class="info">${n.dias}</span></p>
-`;
+        <img src="${n.imagen}" alt="${n.nombre}" onerror="this.src='imagenes/default.png'">
+        <h4>${n.nombre}</h4>
+        <div class="datos">
+          <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> <a href="tel:${n.contacto}" class="info">${n.contacto}</a></p>
+          <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> <a href="mailto:${n.mail}" class="info">${n.mail}</a></p>
+          <p><i class="fas fa-calendar-alt"></i> <strong>Días disponibles:</strong>  <span class="info">${n.dias}</span></p>
+        </div>
+        ${n.observacion ? `<div class="info-observacion">📌 ${n.observacion}</div>` : ""}
+        <div class="redes-nutricionista">
+          ${n.whatsapp ? `<a href="${n.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
+          ${n.instagram ? `<a href="${n.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+        </div>
+      `;
 
       lista.appendChild(card);
     });
@@ -903,6 +918,7 @@ function mostrarNutricionistas() {
     lista.innerHTML = "<p>No hay nutricionistas disponibles en este departamento.</p>";
   }
 }
+
 
 
 
@@ -915,36 +931,45 @@ function mostrarPersonalTrainners() {
   trainersInfo.style.display = "block";
   listaTrainers.innerHTML = ""; // Limpiar antes de renderizar
 
-  // Base de datos de trainers
-  const trainers = {
-    montevideo: [
-      {
-        nombre: "Prof. Juan Martínez",
-        especialidad: "Fuerza & Resistencia",
-        telefono: "011111111",
-        email: "juan@trainer.com",
-        dias: "Lunes, Miércoles y Viernes",
-        imagen: "imagenes/default.png"
-      },
-      {
-        nombre: "Prof. Carla Silva",
-        especialidad: "HIIT & Funcional",
-        telefono: "011111111",
-        email: "carla@trainer.com",
-        dias: "Martes y Jueves",
-        imagen: "imagenes/default.png"
-      }
-    ],
-    canelones: [
-      {
-        nombre: "Prof. Leo Rodríguez",
-        especialidad: "Cardio & Core",
-        telefono: "011111111",
-        email: "leo@trainer.com",
-        dias: "Lunes a Viernes",
-        imagen: "imagenes/default.png"
-      }
-    ],
+ // Base de datos de trainers
+const trainers = {
+  montevideo: [
+    {
+      nombre: "Prof. Juan Martínez",
+      especialidad: "Fuerza & Resistencia",
+      telefono: "011111111",
+      email: "juan@trainer.com",
+      dias: "Lunes, Miércoles y Viernes",
+      imagen: "imagenes/default.png",
+      observacion: "Entrenamientos al aire libre en Parque Rodó.",
+      whatsapp: "https://wa.me/59891111111",
+      instagram: "https://instagram.com/juanfituy"
+    },
+    {
+      nombre: "Prof. Carla Silva",
+      especialidad: "HIIT & Funcional",
+      telefono: "011111111",
+      email: "carla@trainer.com",
+      dias: "Martes y Jueves",
+      imagen: "imagenes/default.png",
+      observacion: "Especialista en entrenamiento funcional para mujeres.",
+      whatsapp: "https://wa.me/59892222222",
+      instagram: "https://instagram.com/carla.hiit"
+    }
+  ],
+  canelones: [
+    {
+      nombre: "Prof. Leo Rodríguez",
+      especialidad: "Cardio & Core",
+      telefono: "011111111",
+      email: "leo@trainer.com",
+      dias: "Lunes a Viernes",
+      imagen: "imagenes/default.png",
+      observacion: "Sesiones personalizadas en gimnasio privado en Las Piedras.",
+      whatsapp: "https://wa.me/59893333333",
+      instagram: "https://instagram.com/leo.coretraining"
+    }
+  ],
     // Otros departamentos vacíos por ahora...
     maldonado: [],
     artigas: [],
@@ -970,16 +995,23 @@ function mostrarPersonalTrainners() {
     entrenadores.forEach(trainer => {
       const div = document.createElement("div");
       div.classList.add("card-trainer");
-
+  
       div.innerHTML = `
-          <img src="${trainer.imagen || 'imagenes/default-trainer.png'}" alt="${trainer.nombre}">
-          <h4>${trainer.nombre}</h4>
-         <p>💪 <strong>Especialidad:</strong> <span class="info">Fuerza & Resistencia</span></p>
-<p>📞 <strong>Teléfono:</strong> <a href="tel:091234567" class="info">091234567</a></p>
-<p>📧 <strong>Correo:</strong> <a href="mailto:juan@trainer.com" class="info">juan@trainer.com</a></p>
-<p>📅 <strong>Días disponibles:</strong> <span class="info">Lunes, Miércoles y Viernes</span></p>
-        `;
-
+        <img src="${trainer.imagen || 'imagenes/default-trainer.png'}" alt="${trainer.nombre}">
+        <h4>${trainer.nombre}</h4>
+        <div class="datos">
+          <p><i class="fas fa-dumbbell"></i> <strong>Especialidad:</strong> <span class="info">${trainer.especialidad || 'Fuerza & Resistencia'}</span></p>
+          <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> <a href="tel:${trainer.telefono}" class="info">${trainer.telefono}</a></p>
+          <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> <a href="mailto:${trainer.email}" class="info">${trainer.email}</a></p>
+          <p><i class="fas fa-calendar-alt"></i> <strong>Días disponibles:</strong> <span class="info">${trainer.dias}</span></p>
+        </div>
+        ${trainer.observacion ? `<div class="info-observacion">📌 ${trainer.observacion}</div>` : ""}
+        <div class="redes-trainer">
+          ${trainer.whatsapp ? `<a href="${trainer.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
+          ${trainer.instagram ? `<a href="${trainer.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+        </div>
+      `;
+  
       listaTrainers.appendChild(div);
     });
   } else {
@@ -987,6 +1019,7 @@ function mostrarPersonalTrainners() {
     mensaje.textContent = "Actualmente no hay personal trainers disponibles en este departamento.";
     listaTrainers.appendChild(mensaje);
   }
+  
 }
 
 
@@ -1000,19 +1033,19 @@ function mostrarPsicologos() {
   const psicologos = {
     montevideo: [
       {
-        nombre: "Dr.",
-        telefono: "",
-        correo: "",
-        dias: "",
+        nombre: "Dr. Pablo Torres",
+        telefono: "0111111111",
+        correo: "pablo@psico.com",
+        dias: "Martes y Jueves",
         imagen: "imagenes/psico2.jpg"
       }
     ],
     canelones: [
       {
-        nombre: "Lic",
-        telefono: "",
-        correo: "",
-        dias: "",
+        nombre: "Lic. Lucía Ferreira",
+        telefono: "011111111",
+        correo: "lucia@psico.com",
+        dias: "Viernes",
         imagen: "imagenes/psico3.jpg"
       }
     ],
@@ -1061,20 +1094,23 @@ function mostrarPsicologos() {
   if (psicologos[departamento]) {
     psicologos[departamento].forEach(p => {
       const card = document.createElement("div");
-      card.classList.add("card-trainer");
+      card.classList.add("card-psicologo");
 
       card.innerHTML = `
-        <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='imagenes/default.png'">
-        <h4>${p.nombre}</h4>
-        <p>📞 <strong>Teléfono:</strong> <a href="tel:${p.telefono}" class="info">${p.telefono}</a></p>
-        <p>📧 <strong>Correo:</strong> <a href="mailto:${p.correo}" class="info">${p.correo}</a></p>
-        <p>📅 <strong>Días disponibles:</strong> <span class="info">${p.dias}</span></p>
-        ${p.observacion ? `<p style="font-style: italic; color: #5C4033;">📌 ${p.observacion}</p>` : ""}
-        <div class="redes-psicologo">
-          ${p.whatsapp ? `<a href="${p.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
-          ${p.instagram ? `<a href="${p.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
-        </div>
-      `;
+      <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='imagenes/default.png'">
+      <h4>${p.nombre}</h4>
+      <div class="datos">
+        <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <a href="tel:${p.telefono}" class="info">${p.telefono}</a></p>
+        <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> <a href="mailto:${p.correo}" class="info">${p.correo}</a></p>
+        <p><i class="fas fa-calendar-alt"></i> <strong>Días disponibles:</strong> ${p.dias}</p>
+      </div>
+      ${p.observacion ? `<p class="info-observacion">📌 ${p.observacion}</p>` : ""}
+      <div class="redes-psicologo">
+        ${p.whatsapp ? `<a href="${p.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
+        ${p.instagram ? `<a href="${p.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+      </div>
+    `;
+
 
       lista.appendChild(card);
     });
