@@ -1499,6 +1499,30 @@ button:hover,
     color: var(--light-text);
   }
 
+/* =========================================
+  iconos redes sociales
+========================================= */
+.redes-psicologo {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.redes-psicologo a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #5C4033;
+  transition: transform 0.3s ease;
+}
+
+.redes-psicologo a:hover {
+  transform: scale(1.2);
+  color: #9c27b0;
+}
+
+
+
+
+
 
   /* =========================================
    Ajustes para celular (Mobile Fix)
