@@ -1745,52 +1745,33 @@ span.info {
 }
 
 
-  /* =========================================
-   Ajustes para celular (Mobile Fix)
+
+.card-psicologo .datos a,
+.card-trainer .datos a,
+.card-nutricionista .datos a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* =========================================
+   Ajustes para celular (Mobile Responsive)
 ========================================= */
 @media (max-width: 768px) {
+
+  /* Espaciado general en mobile */
   body {
-    padding: 0 10px;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   .container {
     padding: 10px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .card-container {
-    gap: 10px;
-  }
-
-  #inputsGrid {
-    grid-template-columns: 1fr !important;
-  }
-
-  #macrosChart {
-    height: 300px !important;
-  }
-
+  /* NAVBAR horizontal con scroll si no entra */
   nav {
     overflow-x: auto;
     white-space: nowrap;
@@ -1819,37 +1800,30 @@ span.info {
     display: inline-block;
   }
 
-  #calculadora {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto;
-    padding: 20px 15px;
-    border-radius: 0;
-    box-shadow: none;
+  /* Ajustes de tamaño de títulos */
+  h2 {
+    font-size: 2.2rem;
   }
-  
-  #calculadora form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+  h3 {
+    font-size: 1.5rem;
   }
-  
-  #calculadora input,
-  #calculadora select {
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  /* Cartas en una sola columna */
+  .card {
     width: 100%;
-    font-size: 1.1rem;
+    max-width: 100%;
   }
-  
-  .genero-container {
-    flex-direction: column !important;
-    gap: 10px !important;
+
+  .card-container {
+    gap: 10px;
   }
-  
-  .genero-card {
-    width: 100%;
-    justify-content: center;
-  }
-  
+
+  /* Scroll horizontal para las mini-cards */
   .card-container.small-cards {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1857,7 +1831,7 @@ span.info {
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
   }
-  
+
   .card.meal-type {
     min-width: 200px;
     flex: 0 0 auto;
@@ -1867,13 +1841,56 @@ span.info {
   .card-container.small-cards::-webkit-scrollbar {
     height: 6px;
   }
-  
+
   .card-container.small-cards::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
 
+  /* Layout vertical para inputs */
+  #inputsGrid {
+    grid-template-columns: 1fr !important;
+  }
 
+  /* Ajuste del tamaño del gráfico */
+  #macrosChart {
+    height: 300px !important;
+  }
+
+  /* Ajustes de la calculadora */
+  #calculadora {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 20px 15px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #calculadora form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #calculadora input,
+  #calculadora select {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  /* Género en vertical */
+  .genero-container {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .genero-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Tabla de rutina con escala y centrada */
   .rutina-table-container {
     transform: scale(0.85);
     transform-origin: top center;
@@ -1906,13 +1923,14 @@ span.info {
     font-size: 0.9rem;
     padding: 10px 15px;
   }
-  
+
+  /* Ajustes del test de bienestar */
   .autoevaluacion {
     display: block !important;
     padding: 0 1rem;
     text-align: left;
   }
-  
+
   .autoevaluacion .pregunta {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -1921,15 +1939,13 @@ span.info {
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     text-align: left;
   }
-  
+
   .autoevaluacion label {
     display: block;
     text-align: left;
     margin: 0.3rem 0;
     font-size: 1rem;
   }
-  
-  
 
   .autoevaluacion input[type="radio"] {
     margin-right: 0.3rem;
@@ -1939,8 +1955,80 @@ span.info {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+
+ /* Cambia la disposición a columna para las tarjetas */
+ .cards-profesionales {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Separación vertical entre tarjetas */
   
 }
+
+  /* ✅ Las tarjetas de profesionales en una sola columna centrada */
+  .cards-profesionales {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* 📏 Que ocupen casi todo el ancho sin pasarse */
+  .card-psicologo,
+  .card-trainer,
+  .card-nutricionista {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  /* 🔙 Quitamos padding interno de la sección de datos */
+  .card-psicologo .datos,
+  .card-trainer .datos,
+  .card-nutricionista .datos {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  /* ✍️ Ajustamos espaciado y tamaño del texto de cada línea de info */
+  .card-psicologo .datos p,
+  .card-trainer .datos p,
+  .card-nutricionista .datos p {
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+
+  /* 🎯 Estilo para los <span class="info"> que contienen texto importante */
+  .card-psicologo .info,
+  .card-trainer .info,
+  .card-nutricionista .info {
+    font-size: 0.95rem;
+    color: #222 !important;
+  }
+
+  /* 📝 Notas u observaciones más compactas */
+  .card-nutricionista .info-observacion {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  /* 👤 Nombre del profesional un poco más chico para móviles */
+  .card-nutricionista h4,
+  .card-psicologo h4,
+  .card-trainer h4 {
+    font-size: 1.05rem;
+  }
+
+  .card-psicologo .datos a,
+.card-trainer .datos a,
+.card-nutricionista .datos a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  display: inline-block;
+}
+
+
+}
+
+ 
 
 
 
