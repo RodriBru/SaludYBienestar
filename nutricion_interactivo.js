@@ -1000,19 +1000,19 @@ function mostrarPsicologos() {
   const psicologos = {
     montevideo: [
       {
-        nombre: "Dr. Pablo Torres",
-        telefono: "0111111111",
-        correo: "pablo@psico.com",
-        dias: "Martes y Jueves",
+        nombre: "Dr.",
+        telefono: "",
+        correo: "",
+        dias: "",
         imagen: "imagenes/psico2.jpg"
       }
     ],
     canelones: [
       {
-        nombre: "Lic. Lucía Ferreira",
-        telefono: "011111111",
-        correo: "lucia@psico.com",
-        dias: "Viernes",
+        nombre: "Lic",
+        telefono: "",
+        correo: "",
+        dias: "",
         imagen: "imagenes/psico3.jpg"
       }
     ],
