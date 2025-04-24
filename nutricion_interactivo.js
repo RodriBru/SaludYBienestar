@@ -1000,16 +1000,6 @@ function mostrarPsicologos() {
   const psicologos = {
     montevideo: [
       {
-        nombre: "Lic. Diego Nicolas Díaz Gómez",
-        telefono: "092612409",
-        correo: "diego.bndg@gmail.com",
-        dias: "Lunes a viernes (martes no) de 13:00 a 18:00",
-        imagen: "imagenes/fotoDiegue.jpg",
-        whatsapp: "https://wa.me/59892612409",
-        instagram: "https://www.instagram.com/psicodiegotcc?igsh=MTViZ3R4M282ODV0MA=="
-      }
-      ,
-      {
         nombre: "Dr. Pablo Torres",
         telefono: "0111111111",
         correo: "pablo@psico.com",
@@ -1025,10 +1015,46 @@ function mostrarPsicologos() {
         dias: "Viernes",
         imagen: "imagenes/psico3.jpg"
       }
-    ]
-    // Agregá más departamentos si querés
+    ],
+    artigas: [],
+    salto: [],
+    paysandu: [],
+    rio_negro: [],
+    soriano: [],
+    colonia: [],
+    san_jose: [],
+    flores: [],
+    florida: [],
+    lavalleja: [],
+    durazno: [],
+    cerro_largo: [],
+    treinta_y_tres: [],
+    rocha: [],
+    maldonado: [],
+    tacuarembo: [],
+    rivera: []
   };
 
+  // 🔹 Definís a Diego como objeto independiente
+  const diego = {
+    nombre: "Lic. Diego Nicolas Díaz Gómez",
+    telefono: "092612409",
+    correo: "diego.bndg@gmail.com",
+    dias: "Lunes a viernes (martes no) de 13:00 a 18:00",
+    imagen: "imagenes/fotoDiegue.jpg",
+    whatsapp: "https://wa.me/59892612409",
+    instagram: "https://www.instagram.com/psicodiegotcc?igsh=MTViZ3R4M282ODV0MA==",
+    observacion: "Atiende presencial solo en Montevideo. Resto del país: modalidad online 🖥️"
+  };
+
+  // 🔹 Lo agregás a todos los departamentos si aún no está
+  for (const dep in psicologos) {
+    if (!psicologos[dep].some(p => p.nombre === diego.nombre)) {
+      psicologos[dep].push(diego);
+    }
+  }
+
+  // 🔹 Mostrar en pantalla
   lista.innerHTML = "";
   contenedor.style.display = "block";
 
@@ -1038,18 +1064,17 @@ function mostrarPsicologos() {
       card.classList.add("card-trainer");
 
       card.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='imagenes/default.png'">
-      <h4>${p.nombre}</h4>
-      <p>📞 <strong>Teléfono:</strong> <a href="tel:${p.telefono}" class="info">${p.telefono}</a></p>
-      <p>📧 <strong>Correo:</strong> <a href="mailto:${p.correo}" class="info">${p.correo}</a></p>
-      <p>📅 <strong>Días disponibles:</strong> <span class="info">${p.dias}</span></p>
-      <div class="redes-psicologo">
-        ${p.whatsapp ? `<a href="${p.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
-        ${p.instagram ? `<a href="${p.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
-      </div>
-    `;
-    
-
+        <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='imagenes/default.png'">
+        <h4>${p.nombre}</h4>
+        <p>📞 <strong>Teléfono:</strong> <a href="tel:${p.telefono}" class="info">${p.telefono}</a></p>
+        <p>📧 <strong>Correo:</strong> <a href="mailto:${p.correo}" class="info">${p.correo}</a></p>
+        <p>📅 <strong>Días disponibles:</strong> <span class="info">${p.dias}</span></p>
+        ${p.observacion ? `<p style="font-style: italic; color: #5C4033;">📌 ${p.observacion}</p>` : ""}
+        <div class="redes-psicologo">
+          ${p.whatsapp ? `<a href="${p.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ""}
+          ${p.instagram ? `<a href="${p.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+        </div>
+      `;
 
       lista.appendChild(card);
     });
@@ -1057,6 +1082,7 @@ function mostrarPsicologos() {
     lista.innerHTML = "<p>No hay psicólogos registrados en este departamento por el momento.</p>";
   }
 }
+
 
 
 
