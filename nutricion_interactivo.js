@@ -1000,18 +1000,18 @@ function crearTarjetaReceta(receta) {
     const psicologos = {
       montevideo: [
         {
-          nombre: "Lic. Mariana López",
-          telefono: "01111111",
-          correo: "mariana@psico.com",
-          dias: "Lunes y Miércoles",
-          imagen: "imagenes/psico1.jpg"
+          nombre: "Lic.Diego Nicolas Díaz Gómez",
+          telefono: "092612409",
+          correo: "diego.bndg@gmail.com",
+          dias: "Lunes a viernes(martes no) de 13:00 a 18:00",
+          imagen: "imagenes/fotoDiegue.jpg"
         },
         {
-          nombre: "Dr. Pablo Torres",
-          telefono: "0111111111",
-          correo: "pablo@psico.com",
-          dias: "Martes y Jueves",
-          imagen: "imagenes/psico2.jpg"
+          nombre: "Dr",
+          telefono: "",
+          correo: "",
+          dias: "",
+          imagen: ""
         }
       ],
       canelones: [
