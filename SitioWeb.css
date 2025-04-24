@@ -424,30 +424,22 @@ footer {
     margin-top: 15px;
 }
 
-
-/* Estilos para los contactos de nutricionista" -----------------------------------------------------*/
-.cards-nutricionistas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-  
-}
-
+/* =========================================
+   CARTAS DE NUTRICIONISTAS
+========================================= */
 .card-nutricionista {
-  background-color: rgba(225, 204, 174, 0.7);
-  border: 1px solid #5C4033;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: linear-gradient(145deg, #f6ede2, #f2dbc3);
+  border: 2px solid #c4a484;
+  border-radius: 20px;
+  padding: 24px;
   width: 280px;
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.3s;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
 .card-nutricionista:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 
 .card-nutricionista img {
@@ -455,36 +447,86 @@ footer {
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  border: 3px solid #5C4033;
+  margin-bottom: 14px;
 }
 
 .card-nutricionista h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3a2b1d;
   margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--text-color);
-}
-
-.card-nutricionista p strong {
-  color: #6a4e35; /* Marrón oscuro, elegante */
-  font-weight: 600;
 }
 
 .card-nutricionista p {
   font-size: 0.95rem;
+  color: #4a4031;
   margin: 6px 0;
-  color: #3b3b3b;
+  line-height: 1.4;
 }
 
-.card-nutricionista p i {
+.card-nutricionista p strong {
+  color: #5C4033;
+  font-weight: 600;
+}
+
+.card-nutricionista .datos {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.card-nutricionista .datos p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.card-nutricionista .datos p i {
   margin-right: 6px;
   color: #54b39b;
 }
 
-.card-nutricionista .info {
-  color: #444;
-  font-weight: 500;
+.card-nutricionista a {
+  word-break: break-word;
 }
 
+.card-nutricionista .info-observacion {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #f8f1e4;
+  border-left: 4px solid #cc5a2e;
+  font-style: italic;
+  color: #6b3f20;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+.card-nutricionista .redes-nutricionista {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.card-nutricionista .redes-nutricionista a {
+  font-size: 1.4rem;
+  margin: 0 12px;
+  color: #5C4033;
+  transition: transform 0.3s ease;
+}
+
+.card-nutricionista .redes-nutricionista a:hover {
+  transform: scale(1.2);
+  color: #9c27b0;
+}
+
+
+.card-nutricionista .info {
+  color: rgb(0, 0, 0); /* ✅ Un verde más oscuro y legible */
+  font-weight: 20;
+  text-shadow: none !important;
+  display: inline-block;
+  word-break: break-word;
+}
 
 
 
@@ -838,27 +880,19 @@ button[type="submit"]:hover {
   }
   
  /* Estilos para los contactos de personal trainer */
-.cards-trainers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.card-trainer {
-  background-color: rgba(225, 204, 174, 0.7);
-  border: 1px solid #5C4033;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+ .card-trainer {
+  background: linear-gradient(145deg, #f6ede2, #f2dbc3);
+  border: 2px solid #c4a484;
+  border-radius: 20px;
+  padding: 24px;
   width: 280px;
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.3s;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
 .card-trainer:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 
 .card-trainer img {
@@ -866,47 +900,83 @@ button[type="submit"]:hover {
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
-  border: 3px solid #5C4033; /* Marco marrón alrededor de la imagen */
+  border: 3px solid #5C4033;
+  margin-bottom: 14px;
 }
 
 .card-trainer h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3a2b1d;
   margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--text-color);
-}
-
-.card-trainer p strong {
-  color: #6a4e35; /* Marrón oscuro */
-  font-weight: 600;
 }
 
 .card-trainer p {
   font-size: 0.95rem;
+  color: #4a4031;
   margin: 6px 0;
-  color: #3b3b3b;
+  line-height: 1.4;
 }
 
-.card-trainer p i {
-  color: #54b39b; /* íconos verdes suaves */
+.card-trainer p strong {
+  color: #5C4033;
+  font-weight: 600;
 }
+
+.card-trainer .datos {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.card-trainer .datos p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.card-trainer .datos p i {
+  margin-right: 6px;
+  color: #54b39b;
+}
+
+.card-trainer a {
+  word-break: break-word;
+}
+
+.card-trainer .redes-trainer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.card-trainer .redes-trainer a {
+  font-size: 1.4rem;
+  margin: 0 12px;
+  color: #5C4033;
+  transition: transform 0.3s ease;
+}
+
+.card-trainer .redes-trainer a:hover {
+  transform: scale(1.2);
+  color: #9c27b0;
+}
+
+.card-trainer .info-observacion {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #f8f1e4;
+  border-left: 4px solid #cc5a2e;
+  font-style: italic;
+  color: #6b3f20;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
 
 .card-trainer .info {
-  color: #2b2b2b;
-  font-weight: 600;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-
-.card-trainer a.info {
-  color: #2b2b2b;
-  text-decoration: none;
-  padding: 2px 4px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.card-trainer a.info:hover {
-  background-color: rgba(92, 64, 51, 0.1);
+  color: black; /* o cualquier otro que contraste bien */
+  font-weight: 200;
+  text-shadow: none !important;
 }
 
   .card-container {
@@ -1499,29 +1569,180 @@ button:hover,
     color: var(--light-text);
   }
 
+
+
+
+
+
+
+
+
+
 /* =========================================
-  iconos redes sociales
+  CARTAS DE PSICÓLOGO (Mejoradas)
 ========================================= */
-.redes-psicologo {
+.card-psicologo {
+  background: linear-gradient(145deg, #f6ede2, #f2dbc3); /* Fondo degradado suave en tonos beige */
+  border: 2px solid #c4a484; /* Borde fino con tono marrón claro */
+  border-radius: 20px; /* Bordes redondeados grandes */
+  padding: 24px; /* Espaciado interno */
+  width: 280px; /* Ancho fijo para la tarjeta */
+  text-align: center; /* Alineación centrada del texto */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra suave para darle profundidad */
+  transition: transform 0.3s ease; /* Transición para animaciones suaves al interactuar */
+}
+
+/* Animación al pasar el mouse: levanta la tarjeta */
+.card-psicologo:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen del psicólogo: estilo circular, tamaño fijo */
+.card-psicologo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%; /* Redonda */
+  object-fit: cover; /* Asegura que la imagen se recorte bien */
+  border: 3px solid #5C4033; /* Borde marrón oscuro */
+  margin-bottom: 14px;
+}
+
+/* Nombre del psicólogo */
+.card-psicologo h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000000; /* Negro para contraste máximo */
+  margin-bottom: 10px;
+}
+
+/* Estilo general para los textos en la tarjeta */
+.card-psicologo p {
+  font-size: 0.95rem;
+  color: #4a4031; /* Marrón oscuro suave */
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+/* Resaltado para las palabras clave como “Teléfono:” o “Correo:” */
+.card-psicologo p strong {
+  color: #5C4033; /* Marrón destacado */
+  font-weight: 600;
+}
+
+/* Estilo para la observación (texto extra tipo nota o aclaración) */
+.card-psicologo .info-observacion {
   margin-top: 12px;
+  padding: 10px;
+  background-color: #f8f1e4; /* Fondo claro para destacar */
+  border-left: 4px solid #cc5a2e; /* Barra lateral de color rojo ladrillo */
+  font-style: italic;
+  color: #6b3f20;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* Contenedor de los datos: texto alineado a la izquierda */
+.card-psicologo .datos {
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* Cada línea de los datos tiene íconos y texto alineado */
+.card-psicologo .datos p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Íconos dentro de los datos */
+.card-psicologo .datos p i {
+  margin-right: 6px;
+  color: #54b39b; /* Verde suave */
+}
+
+/* Correos o teléfonos largos no se cortan mal */
+.card-psicologo .datos a {
+  word-break: break-word;
+}
+
+/* Estilo para la sección de redes sociales */
+.card-psicologo .redes-psicologo {
+  margin-top: 15px;
   text-align: center;
 }
 
-.redes-psicologo a {
-  margin: 0 10px;
-  font-size: 1.5rem;
+/* Íconos de redes sociales */
+.card-psicologo .redes-psicologo a {
+  font-size: 1.4rem;
+  margin: 0 12px;
   color: #5C4033;
   transition: transform 0.3s ease;
 }
 
-.redes-psicologo a:hover {
+/* Animación al pasar el mouse sobre los íconos de redes */
+.card-psicologo .redes-psicologo a:hover {
   transform: scale(1.2);
-  color: #9c27b0;
+  color: #9c27b0; /* Tono violeta fuerte */
+}
+
+
+
+ /* =========================================
+CONTENEDOR DE TODAS LAS CARTAS
+========================================= */
+.cards-profesionales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-psicologo,
+.card-trainer,
+.card-nutricionista {
+  width: 370px;
+  max-width: 100%;
+}
+
+
+
+.card-psicologo .datos p,
+.card-trainer .datos p,
+.card-nutricionista .datos p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  flex-wrap: wrap;
+}
+
+.card-psicologo .datos i,
+.card-trainer .datos i,
+.card-nutricionista .datos i {
+  color: var(--primary-color);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.card-psicologo .datos a,
+.card-trainer .datos a,
+.card-nutricionista .datos a {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  word-break: break-word;
 }
 
 
 
 
+span.info {
+  text-shadow: none !important;
+}
 
 
   /* =========================================
@@ -1720,4 +1941,33 @@ button:hover,
   }
   
 }
+
+
+
+
+
+
+
+
+
+.card-psicologo p,
+.card-trainer p,
+.card-nutricionista p,
+.card-psicologo .datos p,
+.card-trainer .datos p,
+.card-nutricionista .datos p,
+.card-psicologo .info-observacion,
+.card-trainer .info-observacion,
+.card-nutricionista .info-observacion,
+.card-psicologo h4,
+.card-trainer h4,
+.card-nutricionista h4,
+.card-psicologo .datos a,
+.card-trainer .datos a,
+.card-nutricionista .datos a,
+span.info {
+  text-shadow: none !important;
+}
+
+
 
